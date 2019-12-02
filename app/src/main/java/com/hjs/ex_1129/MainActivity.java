@@ -43,11 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 String name = edit_name.getText().toString();
                 String age = edit_age.getText().toString();
                 String pwd = edit_pwd.getText().toString();
+                String birth = edit_b_day.getText().toString();
 
                 // Intent에 값 저장하기
                 i.putExtra("my_name" , name);
                 i.putExtra("my_age" , age);
                 i.putExtra("my_pwd" , pwd);
+                i.putExtra("my_birth" , birth);
 
                 startActivity(i);
             }
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         btn_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //휴대폰에 설정되어 있는 현재 날짜를 가져온다.
                 Calendar now = Calendar.getInstance();
                 int y = now.get(Calendar.YEAR); // 년
@@ -67,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog = new DatePickerDialog(MainActivity.this, dateSetListener, y, m, d); // dateSetListener는 달력의 날짜 변경 감지자
 
                 dialog.show();
+
             }
         });
     }
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker datePicker, int y, int m, int d) {
-            
+
             // 날짜중 월을 표시하는 m변수는
             // 1월 -> 0 , 2월 -> 1 ......
             String result = String.format("%d-%02d-%02d",y,m+1,d);

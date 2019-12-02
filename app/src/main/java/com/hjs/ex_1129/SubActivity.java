@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class SubActivity extends AppCompatActivity {
 
-    TextView name, age, pwd;
+    TextView name, age, pwd, birth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +23,18 @@ public class SubActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         age = findViewById(R.id.age);
         pwd = findViewById(R.id.pwd);
+        birth = findViewById(R.id.birth);
 
         //메인에서 보내준 값을 추출
         String m_name = intent.getStringExtra("my_name");
         String m_age = intent.getStringExtra("my_age");
         String m_pwd = intent.getStringExtra("my_pwd");
+        String m_birth = intent.getStringExtra("my_birth");
 
         name.setText("이름 : "+m_name);
         age.setText("나이 : "+m_age);
         pwd.setText("비번 : "+m_pwd);
+        birth.setText("생년월일 : "+m_birth);
 
     }
 }

@@ -38,7 +38,8 @@
             android:hint="생일 입력"
             android:layout_weight="1"
             android:id="@+id/edit_b_day"
-            android:enabled="false"/>
+            android:enabled="false"
+            android:textColor="#000"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
