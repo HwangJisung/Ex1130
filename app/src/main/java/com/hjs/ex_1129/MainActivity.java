@@ -74,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker datePicker, int y, int m, int d) {
-            String result = String.format("%d-%2d-%3d",y,m,d);
+            
+            // 날짜중 월을 표시하는 m변수는
+            // 1월 -> 0 , 2월 -> 1 ......
+            String result = String.format("%d-%02d-%02d",y,m+1,d);
             edit_b_day.setText(result);
         }
     };
